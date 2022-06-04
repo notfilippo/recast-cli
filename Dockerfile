@@ -14,6 +14,8 @@ RUN ls
 
 FROM alpine:latest
 
+RUN apk --no-cache add libstdc++ libgcc
+
 COPY --from=builder /base/build/RecastCli ./
 
 ENTRYPOINT ["./RecastCli"]
