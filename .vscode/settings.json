@@ -1,5 +1,3 @@
 {
-  "files.associations": {
-    "string": "cpp"
-  }
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: WebKit, ColumnLimit: 120, PointerAlignment: Left}"
 }

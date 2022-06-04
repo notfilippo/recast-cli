@@ -6,6 +6,10 @@ project(RecastCli VERSION 0.1.0)
 
 set(RecastCli_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+set(RECASTNAVIGATION_DEMO OFF CACHE INTERNAL "")
+set(RECASTNAVIGATION_TESTS OFF CACHE INTERNAL "")
+set(RECASTNAVIGATION_EXAMPLES OFF CACHE INTERNAL "")
+
 include(FetchContent)
 FetchContent_Declare(recastnavigation
         GIT_REPOSITORY https://github.com/recastnavigation/recastnavigation.git
@@ -30,5 +34,5 @@ add_executable(RecastCli
         src/MeshLoaderObj.cpp
 )
 
-target_link_libraries(RecastCli Recast gflags::gflags)
-target_include_directories(RecastCli PRIVATE ${RecastCli_INCLUDE_DIR} ${Recast_INCLUDE_DIR})
+target_link_libraries(RecastCli Recast Detour gflags::gflags)
+target_include_directories(RecastCli PRIVATE ${RecastCli_INCLUDE_DIR} ${Recast_INCLUDE_DIR} ${Detour_INCLUDE_DIR})
